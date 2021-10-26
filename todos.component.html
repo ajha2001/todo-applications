@@ -1,0 +1,19 @@
+<div class="para-wrapper">
+    <p *ngFor="let item of selectedTodos; let i = index">
+        {{ item }}<span (click)="splice(item, i)">x</span>
+    </p>
+</div>
+
+<div class="wrapper ripple" *ngFor="let item of todoList; let i = index" (click)="check(i, item)">
+    {{ item }}
+    <input type="checkbox" [class]="'input' + i" (click)="check(i, item)" />
+</div>
+
+<div class="wrapper" id="user-input-wrapper">
+    <input id="user-input" type="text" placeholder="Add todo" />
+    <button type="submit" (click)="getValue()">Add</button>
+</div>
+
+<div class="snackbar">
+    <span>Added to todos!</span>
+</div>

@@ -1,0 +1,68 @@
+@import "reset";
+$nav-height: 6vh;
+$c-primary: #4900f5;
+$text-primary: #ffffff;
+$c-dwarf: gray;
+$font-size: 20px;
+$shadow: 1px 1px 10px 5px gray;
+nav {
+    height: $nav-height;
+    background: $c-primary;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: $shadow;
+    ul {
+        display: flex;
+        flex: 0.8;
+        align-items: center;
+        justify-content: space-between;
+        li {
+            color: $text-primary;
+            display: block;
+            span {
+                font-size: $font-size - 5;
+                margin-left: 20px;
+                color: $c-dwarf;
+            }
+        }
+    }
+    .appname {
+        font-size: $font-size + 3;
+    }
+    @media (max-width: 750px) {
+        height: calc(#{$nav-height} + 2vh);
+        ul>li,
+        ul>li>span {
+            font-size: 10px;
+        }
+        .appname {
+            font-size: 14px;
+        }
+    }
+}
+
+.block {
+    height: calc(100vh - #{$nav-height});
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    app-todos {
+        min-width: 70%;
+        width: fit-content;
+        padding: 10px 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+        .para-wrapper {
+            margin-bottom: 10vh;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-direction: row;
+        }
+    }
+}
